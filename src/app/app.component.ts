@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {NewsService} from './app.service';
+import {CountryService} from './country.service';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {Country} from './model/country';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +10,5 @@ import {NewsService} from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  articles = [];
 
-  constructor(private newsService: NewsService) {
-    this.newsService.getNews()
-      .subscribe(data => {
-        this.articles = data.articles;
-        console.log(this.articles);
-      });
-  }
 }

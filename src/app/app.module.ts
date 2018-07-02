@@ -3,10 +3,8 @@ import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
-import {MatButtonModule, MatCardModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
-import {NewsService} from './app.service';
+import {MatCardModule} from '@angular/material';
+import {NavigationMenuModule} from './navigation-menu/navigation-menu.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +14,9 @@ import {NewsService} from './app.service';
     BrowserModule,
     NgbModule.forRoot(),
     MatCardModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    HttpClientModule
+    NavigationMenuModule,
   ],
-  providers: [NewsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

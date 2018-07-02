@@ -1,0 +1,42 @@
+
+<div class="row" *ngIf="showLoading">
+  <div class="col-md-12" style="text-align: center;">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</div>
+
+<div class="row" *ngIf="!showLoading">
+  <div class="row news-headlines">
+    <div class="col-md-12">
+      Top Headlines for {{currentCountryName}}
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-4" *ngFor="let article of articles" style=" margin-top: 15px;">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title class="news-title">{{article.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image *ngIf="article.urlToImage" src="{{article.urlToImage}}">
+        <mat-card-content>
+          <p class="news-description">
+            {{article.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button href="{{article.url}}">OPEN</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-top: 35px; width:100%;">
+    <div class="col-md-12">
+      <p class="news-app-footer">Powered by <a href="https://newsapi.org">NewsAPI.org</a></p>
+    </div>
+  </div>
+
+</div>
