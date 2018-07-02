@@ -50,7 +50,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "news-app-f:build"
+            "browserTarget": "news-app-f:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {
