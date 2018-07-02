@@ -11,7 +11,7 @@ export class NewsService {
 
   getNews(): Observable<Article> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
-    return this.httpClient.get<Observable<Article>>('http://localhost:8080/headlines', {headers});
+    return this.httpClient.get<Article>('http://localhost:8080/headlines', {headers});
   }
 
 }
